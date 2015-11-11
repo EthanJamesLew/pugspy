@@ -1,4 +1,0 @@
-firebase new
-requests 1.1.0
-os new
-sys new
