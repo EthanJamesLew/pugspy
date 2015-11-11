@@ -16,6 +16,16 @@ class TestSimilarityMethods(unittest.TestCase):
         self.assertEqual(norm(self.vectors[2]), 0)
         self.assertEqual(norm(self.vectors[1]), 9.747)
 
+    def test_unit(self):
+        self.vectors = [[0,3,4,5],[7,6,3,-1],[0,0,0]]
+        self.assertEqual(norm(unit(self.vectors[0])), 1.000)
+        self.assertEqual(norm(unit(self.vectors[1])), 1.000)
+        self.assertEqual(norm(unit(self.vectors[2])), None)
+
+        self.assertEqual(unit(self.vectors[0]), [0.000, 0.424, 0.566, 0.707])
+        self.assertEqual(unit(self.vectors[1]), [0.718,0.616,0.308,-.103])
+        self.assertEqual(unit(self.vectors[2]), None)
+
     def test_nthroot(self):
         self.assertEqual(nth_root(3,4),1.316)
         self.assertEqual(nth_root(0,0),None)
