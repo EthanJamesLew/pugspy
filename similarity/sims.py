@@ -8,6 +8,9 @@ from math import*
 from decimal import Decimal
 
 def norm(x):
+    """
+    Determines the normal of a vector, if a vector doesn't have one (a zero vector), it returns None
+    """
     if x is None:
         return None
     else:
@@ -21,6 +24,9 @@ def nth_root(value, n_root):
         return None
 
 def unit(x):
+    """
+    Scales a vector to unit length
+    """
     x_len = norm(x)
     if x_len is None or x_len == 0:
         return None
@@ -28,6 +34,9 @@ def unit(x):
         return[round(a/x_len, 3) for a in x]
 
 def cosine(x,y):
+    """
+    Determines cos(theta) of two vectors
+    """
     try:
         numerator = sum(a*b for a,b in zip(x,y))
         denominator = norm(x)*norm(y)
